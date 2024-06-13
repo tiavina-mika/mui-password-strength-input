@@ -1,6 +1,2 @@
-## 0.5.0 (2024-06-13)
+## 0.0.1 (2024-06-13)
 
-
-### Features
-
-* change workflow ([7a0ca5a](https://github.com/tiavina-mika/mui-password-strength-input/commit/7a0ca5a17154e997132ccc3cb776b48486139f36))
