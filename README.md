@@ -1,8 +1,8 @@
-# mui-tiptap-editor
+# mui-password-strength-input
 
 <p  align="center">
 
-<b>mui-tiptap-editor</b>: A customizable and easy to use <a href="https://tiptap.dev/">Tiptap</a> styled WYSIWYG rich text editor, using <a  href="https://mui.com/material-ui/getting-started/overview/">Material UI</a>.
+<b>mui-password-strength-input</b>: A customizable and easy to use <a href="https://tiptap.dev/">Tiptap</a> styled WYSIWYG rich text editor, using <a  href="https://mui.com/material-ui/getting-started/overview/">Material UI</a>.
 
 </p>
 
@@ -11,7 +11,7 @@
 
 <details>
 
-- [mui-tiptap-editor](#mui-tiptap-editor)
+- [mui-password-strength-input](#mui-password-strength-input)
   - [Table of Contents](#table-of-contents)
   - [Demo](#demo)
   - [Installation](#installation)
@@ -31,27 +31,27 @@
 
 ## Demo
 
-- **[CodeSandbox live demo](https://codesandbox.io/s/github/tiavina-mika/mui-tiptap-editor-demo)**
-- **[Live demo](https://mui-tiptap-editor.netlify.app/)**
+- **[CodeSandbox live demo](https://codesandbox.io/s/github/tiavina-mika/mui-password-strength-input-demo)**
+- **[Live demo](https://mui-password-strength-input.netlify.app/)**
 - **[Demo video](https://www.youtube.com/watch?v=_VhLVN51cwo)**
 
 
-<img alt="Screenshot" src="https://github.com/tiavina-mika/mui-tiptap-editor/blob/main/screenshots/screenshot.png" />
+<img alt="Screenshot" src="https://github.com/tiavina-mika/mui-password-strength-input/blob/main/screenshots/screenshot.png" />
 
 ## Installation
 
 ```shell
 
-npm  install  mui-tiptap-editor
+npm  install  mui-password-strength-input
 
 ```
 or
 ```shell
 
-yarn  add  mui-tiptap-editor
+yarn  add  mui-password-strength-input
 
 ```
-Please note that [`@mui/material`](https://mui.com/material-ui/getting-started/installation/) (and their `@emotion/` peers) are peer dependencies, meaning you should ensure they are installed before installing `mui-tiptap-editor`.
+Please note that [`@mui/material`](https://mui.com/material-ui/getting-started/installation/) (and their `@emotion/` peers) are peer dependencies, meaning you should ensure they are installed before installing `mui-password-strength-input`.
 
 ```shell
 npm install @mui/material @emotion/react @emotion/styled
@@ -66,7 +66,7 @@ yarn add @mui/material @emotion/react @emotion/styled
 ### Simple usage
 
 ```tsx
-import { TextEditor, TextEditorReadOnly } from 'mui-tiptap-editor';
+import { TextEditor, TextEditorReadOnly } from 'mui-password-strength-input';
 import { useState } from "react";
 
 function App() {
@@ -86,7 +86,7 @@ function App() {
 ### Using mentions
 
 ```tsx
-import { TextEditor, ITextEditorOption } from 'mui-tiptap-editor';
+import { TextEditor, ITextEditorOption } from 'mui-password-strength-input';
 
 const mentions: ITextEditorOption[] = [
   { label: "Lea Thompson", value: "id1" },
@@ -103,13 +103,13 @@ function App() {
 }
 ```
 
-See [`example/App.tsx`](https://github.com/tiavina-mika/mui-tiptap-editor/tree/main/example) for a more thorough example of using `TextEditor`.
+See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-input/tree/main/example) for a more thorough example of using `TextEditor`.
 
 ### Read only
 
 1. If using the editor
 ```tsx
-import { TextEditorReadOnly } from 'mui-tiptap-editor';
+import { TextEditorReadOnly } from 'mui-password-strength-input';
 
 <TextEditorReadOnly value="<h1>Hello word!</h1>" />
 ```
@@ -141,7 +141,7 @@ function App() {
 
 ```tsx
 import './index.css';
-import { TextEditor } from 'mui-tiptap-editor';
+import { TextEditor } from 'mui-password-strength-input';
 
 function App () {
   return (
@@ -166,7 +166,7 @@ function App () {
 #### Each element styles
 
 ```tsx
-import { TextEditor } from 'mui-tiptap-editor';
+import { TextEditor } from 'mui-password-strength-input';
 
 function App () {
   return (
@@ -210,4 +210,4 @@ function App () {
 
 ## Contributing
 
-Get started [here](https://github.com/tiavina-mika/mui-tiptap-editor/blob/main/CONTRIBUTING.md).
+Get started [here](https://github.com/tiavina-mika/mui-password-strength-input/blob/main/CONTRIBUTING.md).

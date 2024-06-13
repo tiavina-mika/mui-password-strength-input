@@ -6,7 +6,7 @@ _Pull requests, bug reports, and all other forms of contribution are welcomed an
 
 ### GitHub issues
 
-If you encounter a problem with this library or if you have a new feature you'd like to see in this project, please create [a new issue](https://github.com/tiavina-mika/mui-tiptap-editor/issues/new/choose).
+If you encounter a problem with this library or if you have a new feature you'd like to see in this project, please create [a new issue](https://github.com/tiavina-mika/mui-password-strength-input/issues/new/choose).
 
 ### GitHub pull requests
 

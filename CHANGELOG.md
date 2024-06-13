@@ -3,5 +3,4 @@
 
 ### Features
 
-* change workflow ([7a0ca5a](https://github.com/tiavina-mika/mui-tiptap-editor/commit/7a0ca5a17154e997132ccc3cb776b48486139f36))
-
+* change workflow ([7a0ca5a](https://github.com/tiavina-mika/mui-password-strength-input/commit/7a0ca5a17154e997132ccc3cb776b48486139f36))

@@ -1,22 +1,20 @@
 {
-  "name": "mui-tiptap-editor",
-  "version": "0.5.0",
-  "description": "Easy to use Tiptap WYSIWYG rich text editor using Material UI (MUI) for React",
+  "name": "mui-password-strength-input",
+  "version": "0.0.0",
+  "description": "A Material-UI password input with password strength indicator",
   "keywords": [
     "mui",
-    "tiptap",
+    "password",
+    "check-passowrd-complexity",
+    "password-strength",
     "material-ui",
-    "prosemirror",
-    "rich text editor",
-    "react text editor",
-    "wysiwyg",
-    "quill",
-    "draftjs",
-    "slate"
+    "password-input",
+    "password-strength-bar",
+    "mui-password"
   ],
-  "homepage": "https://github.com/tiavina-mika/mui-tiptap-editor",
+  "homepage": "https://github.com/tiavina-mika/mui-password-strength-input",
   "bugs": {
-    "url": "https://github.com/tiavina-mika/mui-tiptap-editor/issues"
+    "url": "https://github.com/tiavina-mika/mui-password-strength-input/issues"
   },
   "author": {
     "name": "Tiavina Michael Ralainirina",

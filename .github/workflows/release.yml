@@ -1,0 +1,158 @@
+# --------------------------------------------------- #
+# ------------------------ 1 ------------------------ #
+# --------------------------------------------------- #
+
+name: Releases
+run-name: ${{ github.actor }} releases 🚀
+
+# run this workflow on push to main branch and pull requests
+on:
+  push:
+    branches:
+      - main
+  # pull_request:
+
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+
+env:
+  APP_NAME: check-password-complexity
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # need this for using yarn v4
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Lint
+        run: yarn lint
+
+  # see: https://qa-nora.medium.com/unit-testing-with-jest-and-integration-with-github-actions-bc241b31d257
+  test:
+    name: Test
+    # need the previous job to be completed
+    needs: lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # need this for using yarn v4
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Test
+        run: yarn test:coverage
+
+  changelog:
+    name: Changelog
+    needs:
+      - lint
+      - test
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+
+    outputs:
+      skipped: ${{ steps.changelog.outputs.skipped }}
+      tag: ${{ steps.changelog.outputs.tag }}
+      clean_changelog: ${{ steps.changelog.outputs.clean_changelog }}
+      version: ${{ steps.changelog.outputs.version }}
+
+    env:
+      PR_BRANCH: release-ci-${{ github.sha }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create Branch
+        run: |
+          git checkout -b ${{ env.PR_BRANCH }}
+
+        # This action will bump version, tag commit and generate a changelog with conventional commits.
+        # see: https://github.com/TriPSs/conventional-changelog-action
+      - name: Create Changelog
+        uses: TriPSs/conventional-changelog-action@v5
+        id: changelog
+        with:
+          preset: 'conventionalcommits'
+          github-token: ${{ secrets.GH_TOKEN }}
+          git-user-name: "github-actions[bot]"
+          git-user-email: "github-actions[bot]@users.noreply.github.com"
+          git-branch: ${{ env.PR_BRANCH }}
+          skip-git-pull: true
+          skip-on-empty: false
+          # this will update the version in package.json
+          # and therefore the npm package version
+          version-file: './package.json'
+          create-summary: true
+
+      # if the changelog is skipped, we do not need to create a PR
+      # create a PR with the changelog and the new version
+      # see: https://blog.kubesimplify.com/automated-github-releases-with-github-actions-and-conventional-commits
+      - name: Create Changelog PR
+        if: steps.changelog.outputs.skipped == 'false'
+        run: |
+          gh pr create --base main --head ${{ env.PR_BRANCH }} --title 'chore(release): ${{ steps.changelog.outputs.tag }} [skip-ci]' --body '${{ steps.changelog.outputs.clean_changelog }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      # the PR is created, we can now merge and close it
+      # see: .github/workflows/automerge.yml
+
+  release:
+    name: Release
+    needs: changelog
+    if: github.event_name != 'pull_request' && github.event_name != 'pull_request_target'
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+        # Create GitHub Releases
+        # see: https://github.com/softprops/action-gh-release
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        # it needs the tag to create the release
+        if: needs.changelog.outputs.tag != ''
+        with:
+          tag_name: ${{ needs.changelog.outputs.tag }}
+          name: ${{ needs.changelog.outputs.tag }}
+          prerelease: false
+          draft: false
+          files: CHANGELOG.md
+          generate_release_notes: true
+          body: |
+            <details>
+              <summary>🤖 ${{ env.APP_NAME }} Changelog</summary>
+
+              ${{ needs.changelog.outputs.clean_changelog }}
+            </details>

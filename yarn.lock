@@ -6929,9 +6929,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mui-tiptap-editor@workspace:.":
+"mui-password-strength-input@workspace:.":
   version: 0.0.0-use.local
-  resolution: "mui-tiptap-editor@workspace:."
+  resolution: "mui-password-strength-input@workspace:."
   dependencies:
     "@emotion/babel-plugin": "npm:^11.11.0"
     "@emotion/css": "npm:^11.11.2"

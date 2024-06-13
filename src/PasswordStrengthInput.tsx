@@ -21,7 +21,7 @@ const colors = ['error.main', 'warning.main', 'success.light', 'success.main'];
  * Get the label to be displayed depending on the strength level
  * @param level
  */
-const getPasswordStrengthLabel = (strength: CheckOptionResult['value']) => {
+export const getPasswordStrengthLabel = (strength: CheckOptionResult['value']) => {
   switch (strength) {
     case 'tooWeak':
       return 'Too weak';
