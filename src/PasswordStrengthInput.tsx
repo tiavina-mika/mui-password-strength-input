@@ -1,10 +1,17 @@
 import { ChangeEvent, forwardRef, useState } from 'react';
 
-import { IconButton, Stack, Theme, Typography, TextFieldProps, TextField, Box } from '@mui/material';
+import { IconButton, Stack, Typography, TextFieldProps, TextField, Box, styled } from '@mui/material';
 
 import VisibilityOff from './icons/VisibilityOff';
 import Visibility from './icons/Visibility';
 import { CheckOptionResult, checkPasswordComplexity } from 'check-password-complexity';
+
+type Labels = {
+  tooWeak?: string;
+  weak?: string;
+  medium?: string;
+  strong?: string;
+}
 
 /**
  * Colors for the password strength bar
@@ -19,9 +26,23 @@ const colors = ['error.main', 'warning.main', 'success.light', 'success.main'];
 
 /**
  * Get the label to be displayed depending on the strength level
- * @param level
+ * or use custom labels if provided
+ * @param strength
+ * @param labels
  */
-export const getPasswordStrengthLabel = (strength: CheckOptionResult['value']) => {
+export const getPasswordStrengthLabel = (strength: CheckOptionResult['value'], labels?: Labels): string => {
+  // custom labels
+  if (labels) {
+    let label: string = '';
+    Object.keys(labels).forEach((key: string) => {
+      if (strength === key && labels[key]) {
+        return labels[key];
+      }
+    });
+    return label;
+  }
+
+  // default labels
   switch (strength) {
     case 'tooWeak':
       return 'Too weak';
@@ -34,19 +55,31 @@ export const getPasswordStrengthLabel = (strength: CheckOptionResult['value']) =
   }
 }
 
-const classes = {
-  severity: (color: string, disable: boolean) => (theme: Theme) => {
-    const colorArr = color.split('.');
-    return {
-      width: 40,
-      height: 6,
-      borderRadius: 6,
-      backgroundColor: disable ? theme.palette.grey[300] : (theme.palette as any)[colorArr[0]][colorArr[1]],
-    };
-  },
+interface BarProps {
+  color: string;
+  disable: boolean;
 }
 
-const PasswordStrengthInput =  forwardRef<HTMLDivElement, TextFieldProps>(({ ...rest }, ref) => {
+const Bar = styled('div', {
+  // Configure which props should be forwarded on DOM
+  shouldForwardProp: (prop) =>
+    prop !== 'color' && prop !== 'disable',
+})<BarProps>(({ theme, color, disable }) => {
+  const colorArr = color.split('.');
+  return {
+    width: 40,
+    height: 6,
+    borderRadius: 6,
+    backgroundColor: disable ? theme.palette.grey[300] : (theme.palette as any)[colorArr[0]][colorArr[1]],
+  };
+});
+
+export type PasswordStrengthInputProps = {
+  className?: string;
+  labels?: Labels;
+};
+
+const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputProps & TextFieldProps>(({ labels, className, ...rest }, ref) => {
   const [strengthOption, setStrengthOption] = useState<CheckOptionResult | null>(null);
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -94,16 +127,17 @@ const PasswordStrengthInput =  forwardRef<HTMLDivElement, TextFieldProps>(({ ...
             */}
             <Stack direction="row" spacing={1}>
               {colors.map((color, index) => (
-                <div
-                  key={color}
+                <Bar
+                  color={color}
                   // the bar color depends on the strength level
-                  css={classes.severity(color, index >= strengthOption.score - 1)}
+                  disable={index >= strengthOption.score - 1}
+                  key={color}
                 />
               ))}
             </Stack>
             {/* label to be displayed depending of the strength level */}
             <Typography variant="caption" color={colors.find((_, index) => index === (strengthOption.score - 1))}>
-              {getPasswordStrengthLabel(strengthOption.value)}
+              {getPasswordStrengthLabel(strengthOption.value, labels)}
             </Typography>
           </Stack>
         </Box>
