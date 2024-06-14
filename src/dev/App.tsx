@@ -6,7 +6,12 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <PasswordStrengthInput />
+        <PasswordStrengthInput labels={{
+          tooWeak: 'Too weak 2',
+          weak: 'Weak 2',
+          medium: 'Okay 2',
+          strong: 'Strong 2',
+        }} />
       </Container>
     </ThemeProvider>
   )
