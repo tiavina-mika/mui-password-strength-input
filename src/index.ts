@@ -1,5 +1,5 @@
 export {
   default as PasswordStrengthInput,
-  // type TextEditorProps,
+  type PasswordStrengthInputProps,
   // type ITextEditorOption
 } from './PasswordStrengthInput';
