@@ -10,12 +10,12 @@ const App = () => {
         <PasswordStrengthInput
           barClassName="!w-[50px]"
           strengthLabelClassName="!text-xl"
-          className="!w-full !border-1 !b-green-500"
+          className="!w-full !border-1 !border !b-green-500"
           options={{
             tooWeak: {
               label: 'Too weak 2',
               color: 'red',
-            },
+            }, 
             weak: {
               label: 'Weak 2',
               color: 'yellow',
