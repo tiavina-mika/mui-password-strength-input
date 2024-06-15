@@ -1553,7 +1553,7 @@ __metadata:
     eslint-plugin-prettier: "npm:^5.1.3"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
-    mui-password-strength-input: "npm:^0.0.5"
+    mui-password-strength-input: "npm:^0.0.6"
     postcss: "npm:^8.4.38"
     prettier: "npm:^3.2.2"
     react: "npm:^18.2.0"
@@ -4219,9 +4219,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mui-password-strength-input@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "mui-password-strength-input@npm:0.0.5"
+"mui-password-strength-input@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "mui-password-strength-input@npm:0.0.6"
   dependencies:
     "@emotion/css": "npm:^11.11.2"
     check-password-complexity: "npm:^1.4.9"
@@ -4230,7 +4230,7 @@ __metadata:
     "@mui/material": ^5.15.2
     react: ^16.8.0 || ^17.0.2 || ^18.2.0
     react-dom: ^16.8.0 || ^17.0.2 || ^18.2.0
-  checksum: 10c0/ba3cb8ed4f768c09a787983900f64d1ea7f2eb227aef8ce9668a45b5be0e7df03e89aab54ecf9a1cffd5570b6dc05014e5a8e71f09f72f421163fc5d8f3a6a13
+  checksum: 10c0/5aae7e4ef01e39ca0ad574c07e906383de3d929ef99bd7feedbaa07e2ddda56fc985dcaebc0ed063afbb89a42a00808ce539c8a8611860298455bd6e604a56f0
   languageName: node
   linkType: hard
 
