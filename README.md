@@ -29,7 +29,7 @@ A <a  href="https://mui.com/material-ui/getting-started/overview/">Material-UI</
 
 ## Demo
 
-![Gif](./screenshots/example.gif)
+![Gif](https://github.com/tiavina-mika/mui-password-strength-input/blob/main/screenshots/example.gif)
 
 - **[CodeSandbox live demo](https://codesandbox.io/s/github/tiavina-mika/mui-password-strength-input-demo)**
 - **[Live demo](https://mui-password-strength-input.netlify.app/)**
