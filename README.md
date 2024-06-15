@@ -1,54 +1,24 @@
 # mui-password-strength-input
 
-<p  align="center">
+<p align="center">
 
-A <a  href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password input with password strength indicator.
+A <a href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password input with password strength indicator.
 </p>
 
 
-## Table of Contents
-
-<details>
-
-- [mui-password-strength-input](#mui-password-strength-input)
-  - [Table of Contents](#table-of-contents)
-  - [Demo](#demo)
-  - [Installation](#installation)
-  - [Get started](#get-started)
-    - [Simple usage](#simple-usage)
-    - [Custom labels and bar colors](#custom-labels-and-bar-colors)
-      - [custom all strength options](#custom-all-strength-options)
-      - [custom selected strength options](#custom-selected-strength-options)
-    - [Custom styles](#custom-styles)
-    - [Custom icons](#custom-icons)
-    - [Material-UI TextField props](#material-ui-textfield-props)
-  - [Props](#props)
-  - [Contributing](#contributing)
-
-</details>
-
-## Demo
-
 ![Gif](https://github.com/tiavina-mika/mui-password-strength-input/blob/main/screenshots/example.gif)
-
-- **[CodeSandbox live demo](https://codesandbox.io/s/github/tiavina-mika/mui-password-strength-input-demo)**
-- **[Live demo](https://mui-password-strength-input.netlify.app/)**
-
-
-
-<img alt="Screenshot" src="https://github.com/tiavina-mika/mui-password-strength-input/blob/main/screenshots/screenshot.png" />
 
 ## Installation
 
 ```shell
 
-npm  install  mui-password-strength-input
+npm install mui-password-strength-input
 
 ```
 or
 ```shell
 
-yarn  add  mui-password-strength-input
+yarn add mui-password-strength-input
 
 ```
 Please note that [`@mui/material`](https://mui.com/material-ui/getting-started/installation/) (and their `@emotion/` peers) are peer dependencies, meaning you should ensure they are installed before installing `mui-password-strength-input`.
@@ -134,7 +104,7 @@ function App() {
 ```tsx
   <PasswordStrengthInput
     hidePasswordIcon={<EyeOff />}
-    shwoPasswordIcon={<EyeOn />}
+    showPasswordIcon={<EyeOn />}
   />
 ```
 
