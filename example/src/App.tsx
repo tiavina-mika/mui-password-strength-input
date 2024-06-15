@@ -1,5 +1,5 @@
 import { Container, ThemeProvider, createTheme } from '@mui/material';
-import { PasswordStrengthInput } from 'mui-password-strength-input';
+import PasswordStrengthInput from 'mui-password-strength-input';
 
 const theme = createTheme();
 
@@ -15,7 +15,7 @@ const App = () => {
             tooWeak: {
               label: 'Too weak 2',
               color: 'red',
-            }, 
+            },
             weak: {
               label: 'Weak 2',
               color: 'yellow',
