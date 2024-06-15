@@ -2,7 +2,7 @@
 
 <p  align="center">
 
-<b>mui-password-strength-input</b>: A <a  href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password input with password strength indicator.
+A <a  href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password input with password strength indicator.
 </p>
 
 
@@ -20,6 +20,7 @@
       - [custom all strength options](#custom-all-strength-options)
       - [custom selected strength options](#custom-selected-strength-options)
     - [Custom styles](#custom-styles)
+    - [Custom icons](#custom-icons)
   - [Props](#props)
   - [Contributing](#contributing)
 
@@ -125,6 +126,15 @@ function App() {
   />
 ```
 
+### Custom icons
+
+```tsx
+  <PasswordStrengthInput
+    hidePasswordIcon={<EyeOff />}
+    shwoPasswordIcon={<EyeOn />}
+  />
+```
+
 See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-input/tree/main/example) for a more example of using `PasswordStrengthInput`.
 
 ## Props
@@ -135,6 +145,8 @@ See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-in
 |barClassName|`string`|empty|custom class name of the each bar indicator
 |strengthLabelClassName|`string`|empty|custom class name of the strength label
 |className|`string`|empty|custom class name of text input
+|hidePasswordIcon|`ReactNode`|null|custom icon to hide password
+|hidePasswordIcon|`ReactNode`|null|custom icon to show password
 
 ## Contributing
 

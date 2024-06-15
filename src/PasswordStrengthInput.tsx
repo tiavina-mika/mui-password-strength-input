@@ -1,4 +1,4 @@
-import { ChangeEvent, forwardRef, useState } from 'react';
+import { ChangeEvent, ReactNode, forwardRef, useState } from 'react';
 
 import { IconButton, Stack, Typography, TextFieldProps, TextField, Box, styled, Theme } from '@mui/material';
 
@@ -81,6 +81,8 @@ export type PasswordStrengthInputProps = {
   inactiveColor?: string;
   barClassName?: string;
   strengthLabelClassName?: string;
+  hidePasswordIcon?: ReactNode;
+  showPasswordIcon?: ReactNode;
 };
 interface BarProps extends Pick<PasswordStrengthInputProps, 'inactiveColor'>{
   color: string;
@@ -107,6 +109,8 @@ const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputP
   className,
   barClassName,
   strengthLabelClassName,
+  hidePasswordIcon,
+  showPasswordIcon,
   ...rest
 }, ref) => {
   const [strengthOption, setStrengthOption] = useState<CheckOptionResult | null>(null);
@@ -141,7 +145,10 @@ const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputP
               edge="end"
             >
               {/* toggle eye icon */}
-              {showPassword ? <VisibilityOff /> : <Visibility />}
+              {showPassword
+                ? (hidePasswordIcon || <VisibilityOff />)
+                : (showPasswordIcon || <Visibility />)
+              }
             </IconButton>
           ),
         }}
