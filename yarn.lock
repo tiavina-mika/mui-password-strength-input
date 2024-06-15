@@ -3290,13 +3290,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-password-complexity@npm:^1.4.8":
-  version: 1.4.8
-  resolution: "check-password-complexity@npm:1.4.8"
+"check-password-complexity@npm:^1.4.9":
+  version: 1.4.9
+  resolution: "check-password-complexity@npm:1.4.9"
   peerDependencies:
     react: ^16.8.0 || ^17.0.2 || ^18.2.0
     react-dom: ^16.8.0 || ^17.0.2 || ^18.2.0
-  checksum: 10c0/0c7cd46e1f84d95cd5e472cb74713a3ae399af0cff2ae4de96055f45f5cfa3ca447792b7c9eb90e344167d2ba1ca522ca9f32b5794fd78bf8e7105976aa87408
+  checksum: 10c0/1567222f66e60b62e9390b9b9cf3737fd36deb9487c1b1cafd4bf9985f28d3882291d50e3b15029e00fe101560dafc12639ad24e100e1db45469b25fe18a3d96
   languageName: node
   linkType: hard
 
@@ -6945,7 +6945,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^6.20.0"
     "@vitejs/plugin-react": "npm:^4.2.1"
     babel-plugin-module-resolver: "npm:^5.0.0"
-    check-password-complexity: "npm:^1.4.8"
+    check-password-complexity: "npm:^1.4.9"
     copyfiles: "npm:^2.4.1"
     cspell: "npm:^6.31.1"
     eslint: "npm:^8.56.0"

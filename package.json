@@ -70,7 +70,7 @@
   },
   "dependencies": {
     "@emotion/css": "^11.11.2",
-    "check-password-complexity": "^1.4.8"
+    "check-password-complexity": "^1.4.9"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.3",

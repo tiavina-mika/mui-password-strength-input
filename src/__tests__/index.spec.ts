@@ -1,20 +1,40 @@
 // import {describe, expect, test} from '@jest/globals';
-import { getPasswordStrengthLabel } from '../PasswordStrengthInput';
+import { getPasswordStrengthResult } from '../PasswordStrengthInput';
 
-describe('check valid url', () => {
+// ------------ default options ------------ //
+describe('check default labels', () => {
   test('tooWeak label', () => {
-    expect(getPasswordStrengthLabel('tooWeak')).toBe('Too weak');
+    expect(getPasswordStrengthResult('tooWeak').label).toBe('Too weak');
   });
 
   test('weak label', () => {
-    expect(getPasswordStrengthLabel('weak')).toBe('Weak');
+    expect(getPasswordStrengthResult('weak').label).toBe('Weak');
   });
 
   test('medium label', () => {
-    expect(getPasswordStrengthLabel('medium')).toBe('Okay');
+    expect(getPasswordStrengthResult('medium').label).toBe('Okay');
   });
 
   test('strong label', () => {
-    expect(getPasswordStrengthLabel('strong')).toBe('Strong');
+    expect(getPasswordStrengthResult('strong').label).toBe('Strong');
+  });
+});
+
+// ------------ custom options ------------ //
+describe('check override labels', () => {
+  test('custom label', () => {
+    const option = getPasswordStrengthResult('tooWeak', { tooWeak: { label: 'Too weak 2' } });
+    expect(option.label).toBe('Too weak 2');
+  });
+
+  test('custom color', () => {
+    const option = getPasswordStrengthResult('medium', { medium: { color: 'red' } });
+    expect(option.color).toBe('red');
+  });
+
+  test('custom color and label', () => {
+    const option = getPasswordStrengthResult('strong', { strong: { color: 'red', label: 'Strong 2' } });
+    expect(option.label).toBe('Strong 2');
+    expect(option.color).toBe('red');
   });
 });
