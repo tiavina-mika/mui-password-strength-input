@@ -21,6 +21,7 @@ A <a  href="https://mui.com/material-ui/getting-started/overview/">Material-UI</
       - [custom selected strength options](#custom-selected-strength-options)
     - [Custom styles](#custom-styles)
     - [Custom icons](#custom-icons)
+    - [Material-UI TextField props](#material-ui-textfield-props)
   - [Props](#props)
   - [Contributing](#contributing)
 
@@ -135,6 +136,16 @@ function App() {
   />
 ```
 
+
+### Material-UI TextField props
+
+```tsx
+  <PasswordStrengthInput
+    placeholder="Enter your password"
+    // ...other mui TextField props
+  />
+```
+
 See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-input/tree/main/example) for a more example of using `PasswordStrengthInput`.
 
 ## Props
@@ -147,6 +158,7 @@ See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-in
 |className|`string`|empty|custom class name of text input
 |hidePasswordIcon|`ReactNode`|null|custom icon to hide password
 |hidePasswordIcon|`ReactNode`|null|custom icon to show password
+|...otherProps|`TextFieldProps`|null|all mui `TextField` props
 
 ## Contributing
 
