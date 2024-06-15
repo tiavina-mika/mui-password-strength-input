@@ -321,19 +321,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/css@npm:^11.11.2":
-  version: 11.11.2
-  resolution: "@emotion/css@npm:11.11.2"
-  dependencies:
-    "@emotion/babel-plugin": "npm:^11.11.0"
-    "@emotion/cache": "npm:^11.11.0"
-    "@emotion/serialize": "npm:^1.1.2"
-    "@emotion/sheet": "npm:^1.2.2"
-    "@emotion/utils": "npm:^1.2.1"
-  checksum: 10c0/1300e64d60df0c88261fee614663cd5d2d0a77623dc79332814959b4486599c6fdc8c0af5d702994bf367acfcc0fb16d44b8b7935deb1ad622e588b1eb608d73
-  languageName: node
-  linkType: hard
-
 "@emotion/hash@npm:^0.9.1":
   version: 0.9.1
   resolution: "@emotion/hash@npm:0.9.1"
@@ -1553,7 +1540,7 @@ __metadata:
     eslint-plugin-prettier: "npm:^5.1.3"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
-    mui-password-strength-input: "npm:^0.0.6"
+    mui-password-strength-input: "npm:^0.1.4"
     postcss: "npm:^8.4.38"
     prettier: "npm:^3.2.2"
     react: "npm:^18.2.0"
@@ -4219,18 +4206,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mui-password-strength-input@npm:^0.0.6":
-  version: 0.0.6
-  resolution: "mui-password-strength-input@npm:0.0.6"
+"mui-password-strength-input@npm:^0.1.4":
+  version: 0.1.4
+  resolution: "mui-password-strength-input@npm:0.1.4"
   dependencies:
-    "@emotion/css": "npm:^11.11.2"
     check-password-complexity: "npm:^1.4.9"
   peerDependencies:
     "@emotion/react": ^11.11.3
     "@mui/material": ^5.15.2
     react: ^16.8.0 || ^17.0.2 || ^18.2.0
     react-dom: ^16.8.0 || ^17.0.2 || ^18.2.0
-  checksum: 10c0/5aae7e4ef01e39ca0ad574c07e906383de3d929ef99bd7feedbaa07e2ddda56fc985dcaebc0ed063afbb89a42a00808ce539c8a8611860298455bd6e604a56f0
+  checksum: 10c0/b6907b85799f68c81245fdf66de38d2ca1257ea8b0785f238bd6568266604ea27f2ee4da6864000d61326773396ac73da431391810429d41b0311ed7aa7cc210
   languageName: node
   linkType: hard
 
