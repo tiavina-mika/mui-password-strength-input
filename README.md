@@ -114,9 +114,9 @@ import { TextEditorReadOnly } from 'mui-password-strength-input';
 <TextEditorReadOnly value="<h1>Hello word!</h1>" />
 ```
 
-2. If it's just to display the value without using the editor, you can use this [`tiptap-parser`](https://www.npmjs.com/package/tiptap-parser) library. Example: The editor is used in the back office, but the content is to be displayed on the website
+2. If it's just to display the value without using the editor, you can use this [`mui-password-strength-input`](https://www.npmjs.com/package/mui-password-strength-input) library. Example: The editor is used in the back office, but the content is to be displayed on the website
 ```tsx
-import TiptapParser from "tiptap-parser";
+import TiptapParser from "mui-password-strength-input";
 
 const html = `<h1>Hello world</h1>`;
 
