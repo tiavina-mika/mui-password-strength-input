@@ -69,7 +69,6 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@emotion/css": "^11.11.2",
     "check-password-complexity": "^1.4.9"
   },
   "peerDependencies": {
@@ -79,7 +78,6 @@
     "react-dom": "^16.8.0 || ^17.0.2 || ^18.2.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.11.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.2",

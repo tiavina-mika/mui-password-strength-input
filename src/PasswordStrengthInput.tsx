@@ -1,11 +1,10 @@
 import { ChangeEvent, ReactNode, forwardRef, useState } from 'react';
 
-import { IconButton, Stack, Typography, TextFieldProps, TextField, Box, styled, Theme } from '@mui/material';
+import { IconButton, Stack, Typography, TextFieldProps, TextField, Box, styled, Theme, useTheme } from '@mui/material';
 
 import VisibilityOff from './icons/VisibilityOff';
 import Visibility from './icons/Visibility';
 import { CheckOptionResult, checkPasswordComplexity } from 'check-password-complexity';
-import { useTheme } from '@emotion/react';
 
 type Strength ={
   label?: string;
