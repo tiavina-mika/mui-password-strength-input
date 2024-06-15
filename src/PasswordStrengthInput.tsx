@@ -130,6 +130,7 @@ const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputP
       <TextField
         ref={ref}
         {...rest}
+        className={className}
         type={showPassword ? 'text' : 'password'}
         onChange={handleChange}
         InputProps={{
