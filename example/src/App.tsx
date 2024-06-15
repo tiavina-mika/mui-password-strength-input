@@ -9,7 +9,7 @@ const App = () => {
       <Container>
         <div className="flex flex-col gap-2 mb-16 mt-2">
           <Typography variant="h5">mui-password-strength-input</Typography>
-          <p>Click on the input field and type a password to see the strength indicator</p>
+          <Typography>Click on the input field and type a password to see the strength indicator</Typography>
         </div>
         <PasswordStrengthInput
           placeholder="Enter your password"
