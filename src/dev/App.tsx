@@ -8,6 +8,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Container>
         <PasswordStrengthInput
+          className='input'
           options={{
             tooWeak: {
               label: 'Too weak 2',
