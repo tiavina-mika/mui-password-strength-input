@@ -1,8 +1,7 @@
 import PasswordStrengthInput from './PasswordStrengthInput';
+
 export {
-  // default as PasswordStrengthInput,
-  type PasswordStrengthInputProps,
-  // type ITextEditorOption
+  type PasswordStrengthInputProps
 } from './PasswordStrengthInput';
 
 export default PasswordStrengthInput;
