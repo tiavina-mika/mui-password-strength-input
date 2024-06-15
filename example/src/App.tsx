@@ -8,6 +8,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Container>
         <PasswordStrengthInput
+          barClassName="!w-[50px]"
+          strengthLabelClassName="!text-xl"
+          className="!border-1 !b-green-500"
           options={{
             tooWeak: {
               label: 'Too weak 2',
