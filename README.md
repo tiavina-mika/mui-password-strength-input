@@ -2,8 +2,7 @@
 
 <p  align="center">
 
-<b>mui-password-strength-input</b>: A customizable and easy to use <a href="https://tiptap.dev/">Tiptap</a> styled WYSIWYG rich text editor, using <a  href="https://mui.com/material-ui/getting-started/overview/">Material UI</a>.
-
+<b>mui-password-strength-input</b>: A <a  href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password input with password strength indicator.
 </p>
 
 
@@ -17,13 +16,10 @@
   - [Installation](#installation)
   - [Get started](#get-started)
     - [Simple usage](#simple-usage)
-    - [Using mentions](#using-mentions)
-    - [Read only](#read-only)
-  - [Customization](#customization)
-    - [Toolbar](#toolbar)
-    - [Styles](#styles)
-      - [Root styles](#root-styles)
-      - [Each element styles](#each-element-styles)
+    - [Custom labels and bar colors](#custom-labels-and-bar-colors)
+      - [custom all strength options](#custom-all-strength-options)
+      - [custom selected strength options](#custom-selected-strength-options)
+    - [Custom styles](#custom-styles)
   - [Props](#props)
   - [Contributing](#contributing)
 
@@ -66,147 +62,79 @@ yarn add @mui/material @emotion/react @emotion/styled
 ### Simple usage
 
 ```tsx
-import { TextEditor, TextEditorReadOnly } from 'mui-password-strength-input';
+import PasswordStrengthInput from 'mui-password-strength-input';
 import { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState<string>("");
-
-  const handleChange = (newValue: string) => setValue(newValue);
-
   return (
-    <div>
-      <TextEditor value={value} onChange={handleChange} />
-      {value && <TextEditorReadOnly value={value} />}
-    </div>
+    <PasswordStrengthInput />
   );
 }
 ```
 
-### Using mentions
-
+### Custom labels and bar colors
+#### custom all strength options
 ```tsx
-import { TextEditor, ITextEditorOption } from 'mui-password-strength-input';
-
-const mentions: ITextEditorOption[] = [
-  { label: "Lea Thompson", value: "id1" },
-  { label: "Cyndi Lauper", value: "id2" },
-  { label: "Tom Cruise", value: "id13" },
-];
-
-const currentUser: ITextEditorOption = mentions[0];
-
-function App() {
-  return (
-    <TextEditor mentions={mentions} user={currentUser} userPathname="/profile" />
-  );
-}
-```
-
-See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-input/tree/main/example) for a more thorough example of using `TextEditor`.
-
-### Read only
-
-1. If using the editor
-```tsx
-import { TextEditorReadOnly } from 'mui-password-strength-input';
-
-<TextEditorReadOnly value="<h1>Hello word!</h1>" />
-```
-
-2. If it's just to display the value without using the editor, you can use this [`mui-password-strength-input`](https://www.npmjs.com/package/mui-password-strength-input) library. Example: The editor is used in the back office, but the content is to be displayed on the website
-```tsx
-import TiptapParser from "mui-password-strength-input";
-
-const html = `<h1>Hello world</h1>`;
-
-function App() {
-  return (
-    <TiptapParser content={html} />
-  );
-}
-```
-
-## Customization
-
-### Toolbar
-<p> Can display the menus as needed</p>
-
-```tsx
-  <TextEditor toolbar={['bold', 'italic', 'underline']} />
-```
-
-### Styles
-#### Root styles
-
-```tsx
-import './index.css';
-import { TextEditor } from 'mui-password-strength-input';
-
-function App () {
-  return (
-    <TextEditor
-      value="<p>Hello word!</p>"
-      rootClassName="root"
+    <PasswordStrengthInput
+      options={{
+        tooWeak: {
+          label: 'Too weak 2',
+          color: 'red',
+        },
+        weak: {
+          label: 'Weak 2',
+          color: 'yellow',
+        },
+        medium: {
+          label: 'Medium 2',
+          color: 'green',
+        },
+        strong: {
+          label: 'Strong 2',
+          color: 'blue'
+        },
+      }}
     />
-  )
-}
 ```
 
-```css
-/* ./index.css */
-.root {
-  background-color: #fff;
-}
-.root  .MuiTab-root.Mui-selected {
-  background-color: yellow  !important;
-}
+#### custom selected strength options
+```tsx
+    <PasswordStrengthInput
+      options={{
+        tooWeak: {
+          label: 'Too weak 2',
+          color: 'red',
+        },
+        weak: {
+          label: 'Weak 2',
+        },
+        medium: {
+          color: 'green',
+        },
+      }}
+    />
 ```
 
-#### Each element styles
+### Custom styles
 
 ```tsx
-import { TextEditor } from 'mui-password-strength-input';
-
-function App () {
-  return (
-    <TextEditor
-      value="<p>Hello word!</p>"
-      label="Content"
-      tabClassName="bg-black"
-      labelClassName="text-sm"
-      inputClassName="border border-gray-200"
-      toolbarClassName="bg-gray-500"
-    />
-  )
-}
+  <PasswordStrengthInput
+    barClassName="!w-[50px]"
+    strengthLabelClassName="!text-xl"
+    className="!w-full
+  />
 ```
+
+See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-input/tree/main/example) for a more example of using `PasswordStrengthInput`.
 
 ## Props
 
 |props |type                          | Default value                         | Description |
 |----------------|-------------------------------|-----------------------------|-----------------------------|
-|toolbar|`string[]`| heading, bold, italic, strike, link, underline, image, code, orderedList, bulletList, align, codeBlock, blockquote, table, history, youtube, color, mention| The list of the menu buttons to be displayed|
-|placeholder|`string`|empty|input placeholder
-|label|`string`|empty|input label
-|error|`string`|empty| Error message to display
-|withFloatingMenu|`boolean`|false| Show or hide the [floating menu](https://tiptap.dev/docs/editor/api/extensions/floating-menu)
-|withBubbleMenu|`boolean`|true| Show or hide the [bubble menu](https://tiptap.dev/docs/editor/api/extensions/bubble-menu)
-|inputClassName|`string`|empty| Override input styles
-|toolbarClassName|`string`|empty|  Override the toolbar menu styles
-|tabsClassName|`string`|empty| Override the tabs (`preview`, `editor`) styles
-|tabClassName|`string`|empty| Override the tab (`preview` or `editor`) styles
-|errorClassName|`string`|empty| Override the error message styles
-|rootClassName|`string`|empty| Override the main container styles
-|labelClassName|`string`|empty| Override the label styles
-|bubbleMenuToolbar|`string[]`|`['bold', 'italic', 'underline', 'link']`| Similar to `toolbar` props
-|floatingMenuToolbar|`string[]`|`['bold', 'italic', 'underline', 'link']`| Similar to `toolbar` props
-|mentions|`ITextEditorOption[]`|undefined| List of users to be mentioned when entering or selecting `@`
-|user|`ITextEditorOption`|undefined| Current user
-|value|`string`|empty| Value of the input
-|onChange|`(value: string) => void`|-| Function to call when the input change
-|userPathname|`boolean`|/user| URL pathname for the mentioned user (eg: /user/user_id)
-|...all tiptap features|[EditorOptions](https://github.com/ueberdosis/tiptap/blob/e73073c02069393d858ca7d8c44b56a651417080/packages/core/src/types.ts#L52)|empty| Can access to all tiptap `useEditor` props
+|options|`Options`|null|Options to override colors and labels of each strength
+|barClassName|`string`|empty|custom class name of the each bar indicator
+|strengthLabelClassName|`string`|empty|custom class name of the strength label
+|className|`string`|empty|custom class name of text input
 
 ## Contributing
 
