@@ -3,9 +3,10 @@
   "version": "0.1.7",
   "description": "A Material-UI password input with password strength indicator",
   "keywords": [
+    "react",
     "mui",
     "password",
-    "check-passowrd-complexity",
+    "check-passworrd-complexity",
     "password-strength",
     "material-ui",
     "password-input",

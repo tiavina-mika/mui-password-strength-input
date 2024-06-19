@@ -118,11 +118,11 @@ function App() {
   />
 ```
 
-See [`example/App.tsx`](https://github.com/tiavina-mika/mui-password-strength-input/tree/main/example) for a more example of using `PasswordStrengthInput`.
+See [`here`](https://github.com/tiavina-mika/mui-password-strength-input/tree/main/example) for more examples that use `PasswordStrengthInput`.
 
 ## Props
 
-|props |type                          | Default value                         | Description |
+|Props |Type                          | Default value                         | Description |
 |----------------|-------------------------------|-----------------------------|-----------------------------|
 |options|`Options`|null|Options to override colors and labels of each strength
 |barClassName|`string`|empty|custom class name of the each bar indicator
