@@ -1,6 +1,6 @@
 {
   "name": "mui-password-strength-input",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A Material-UI password input with password strength indicator",
   "keywords": [
     "react",
