@@ -2,9 +2,15 @@
 
 <p align="center">
 
-A <a href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password input with password strength indicator.
+A <a href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a> password text field with password strength indicator.
 </p>
 
+## Demo
+
+- **[CodeSandbox live demo](https://codesandbox.io/s/github/tiavina-mika/mui-password-strength-input-demo)**
+- **[Live demo](https://mui-password-strength-input.netlify.app/)**
+
+<br />
 
 ![Gif](https://github.com/tiavina-mika/mui-password-strength-input/blob/main/screenshots/example.gif)
 
@@ -46,8 +52,8 @@ function App() {
 }
 ```
 
-### Custom labels and bar colors
-#### custom all strength options
+### Override labels and bar colors
+#### Override strength options
 ```tsx
     <PasswordStrengthInput
       options={{
@@ -71,7 +77,7 @@ function App() {
     />
 ```
 
-#### custom selected strength options
+#### Override selected strength options only
 ```tsx
     <PasswordStrengthInput
       options={{
@@ -125,12 +131,12 @@ See [`here`](https://github.com/tiavina-mika/mui-password-strength-input/tree/ma
 |Props |Type                          | Default value                         | Description |
 |----------------|-------------------------------|-----------------------------|-----------------------------|
 |options|`Options`|null|Options to override colors and labels of each strength
-|barClassName|`string`|empty|custom class name of the each bar indicator
-|strengthLabelClassName|`string`|empty|custom class name of the strength label
-|className|`string`|empty|custom class name of text input
-|hidePasswordIcon|`ReactNode`|null|custom icon to hide password
-|hidePasswordIcon|`ReactNode`|null|custom icon to show password
-|...otherProps|`TextFieldProps`|null|all mui `TextField` props
+|barClassName|`string`|empty|Each bar indicator class name
+|strengthLabelClassName|`string`|empty|Strength label class name
+|className|`string`|empty|TextField class name
+|hidePasswordIcon|`ReactNode`|null|Custom icon to hide password
+|hidePasswordIcon|`ReactNode`|null|Custom icon to show password
+|...otherProps|`TextFieldProps`|null|All mui `TextField` props
 
 ## Contributing
 
