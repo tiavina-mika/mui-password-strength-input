@@ -12,7 +12,7 @@
     "upgrade": "yarn add mui-password-strength-input@latest"
   },
   "dependencies": {
-    "mui-password-strength-input": "^0.1.4",
+    "mui-password-strength-input": "^0.1.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
