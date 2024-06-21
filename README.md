@@ -42,12 +42,15 @@ yarn add @mui/material @emotion/react @emotion/styled
 ### Simple usage
 
 ```tsx
-import PasswordStrengthInput from 'mui-password-strength-input';
-import { useState } from "react";
+import PasswordStrengthInput from 'password-strength-input';
 
 function App() {
+  const [password, setPassword] = useState<string>('');
+
+  const handlePasswordChange = (value: string) => setPassword(value);
+
   return (
-    <PasswordStrengthInput />
+    <PasswordStrengthInput value={value} onChange={handlePasswordChange} />
   );
 }
 ```
@@ -58,19 +61,19 @@ function App() {
     <PasswordStrengthInput
       options={{
         tooWeak: {
-          label: 'Too weak 2',
+          label: 'Trop faible',
           color: 'red',
         },
         weak: {
-          label: 'Weak 2',
+          label: 'Faible',
           color: 'yellow',
         },
         medium: {
-          label: 'Medium 2',
+          label: 'Moyen',
           color: 'green',
         },
         strong: {
-          label: 'Strong 2',
+          label: 'Fort',
           color: 'blue'
         },
       }}
@@ -82,11 +85,11 @@ function App() {
     <PasswordStrengthInput
       options={{
         tooWeak: {
-          label: 'Too weak 2',
+          label: 'Trop faible',
           color: 'red',
         },
         weak: {
-          label: 'Weak 2',
+          label: 'Faible',
         },
         medium: {
           color: 'green',
