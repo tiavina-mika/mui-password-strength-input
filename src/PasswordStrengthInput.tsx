@@ -82,8 +82,9 @@ export type PasswordStrengthInputProps = {
   strengthLabelClassName?: string;
   hidePasswordIcon?: ReactNode;
   showPasswordIcon?: ReactNode;
+  barWidth?: number;
 };
-interface BarProps extends Pick<PasswordStrengthInputProps, 'inactiveColor'>{
+interface BarProps extends Pick<PasswordStrengthInputProps, 'inactiveColor' | 'barWidth'>{
   color: string;
   inactive: boolean;
 }
@@ -91,15 +92,23 @@ interface BarProps extends Pick<PasswordStrengthInputProps, 'inactiveColor'>{
 const Bar = styled('div', {
   // Configure which props should be forwarded on DOM
   shouldForwardProp: (prop) =>
-    prop !== 'color' && prop !== 'inactive' && prop !== 'inactiveColor',
-})<BarProps>(({ theme, color, inactive, inactiveColor }) => {
+    prop !== 'color' && prop !== 'inactive' && prop !== 'inactiveColor' && prop !== 'barWidth',
+})<BarProps>(({ theme, color, inactive, inactiveColor, barWidth }) => {
   const defaultInactiveColor = inactiveColor || theme.palette.grey[300];
-  return {
-    width: 40,
+
+  const style: Record<string, string | number> = {
     height: 6,
     borderRadius: 6,
     backgroundColor: inactive ? defaultInactiveColor : color,
   };
+
+  if (barWidth) {
+    style.width = barWidth;
+  } else {
+    style.flex = 1;
+  }
+
+  return style;
 });
 
 const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputProps & TextFieldProps>(({
@@ -110,6 +119,7 @@ const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputP
   strengthLabelClassName,
   hidePasswordIcon,
   showPasswordIcon,
+  barWidth,
   ...rest
 }, ref) => {
   const [strengthOption, setStrengthOption] = useState<CheckOptionResult | null>(null);
@@ -163,7 +173,7 @@ const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputP
             * each strength level (4) will have a different color
             * it will be displayed as a bar
             */}
-            <Stack direction="row" spacing={1}>
+            <Stack direction="row" spacing={1} flex={barWidth ? 'initial' : 1}>
               {getColors(theme).map((option: ColorOption, index: number) => (
                 <Bar
                   color={(options as any)?.[option.value]?.color || option.color}
@@ -172,6 +182,7 @@ const PasswordStrengthInput =  forwardRef<HTMLDivElement, PasswordStrengthInputP
                   inactiveColor={inactiveColor}
                   key={index}
                   className={barClassName}
+                  barWidth={barWidth}
                 />
                 ))}
             </Stack>

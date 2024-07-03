@@ -7,7 +7,7 @@ A <a href="https://mui.com/material-ui/getting-started/overview/">Material-UI</a
 
 ## Demo
 
-- **[CodeSandbox live demo](https://codesandbox.io/s/github/tiavina-mika/mui-password-strength-input-demo)**
+- **[CodeSandbox](https://codesandbox.io/s/github/tiavina-mika/mui-password-strength-input-demo)**
 - **[Live demo](https://mui-password-strength-input.netlify.app/)**
 
 <br />
@@ -139,6 +139,7 @@ See [`here`](https://github.com/tiavina-mika/mui-password-strength-input/tree/ma
 |className|`string`|empty|TextField class name
 |hidePasswordIcon|`ReactNode`|null|Custom icon to hide password
 |hidePasswordIcon|`ReactNode`|null|Custom icon to show password
+|barWidth|`number`|null|Width of each bar. By default, if not defined the bar will use `flex` 1
 |...otherProps|`TextFieldProps`|null|All mui `TextField` props
 
 ## Contributing

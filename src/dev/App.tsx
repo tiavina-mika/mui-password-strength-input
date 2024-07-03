@@ -11,22 +11,23 @@ const App = () => {
           className='input'
           options={{
             tooWeak: {
-              label: 'Too weak 2',
+              label: 'Trop faible',
               color: 'red',
             },
             weak: {
-              label: 'Weak 2',
+              label: 'Faible',
               color: 'yellow',
             },
             medium: {
-              label: 'Medium 2',
+              label: 'Moyen',
               color: 'green',
             },
             strong: {
-              label: 'Strong 2',
+              label: 'Fort',
               color: 'blue'
             },
           }}
+          // barWidth={40}
         />
       </Container>
     </ThemeProvider>
